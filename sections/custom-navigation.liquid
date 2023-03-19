@@ -1,23 +1,10 @@
-{% schema %}
-  {
-    "name": "Custom Navigation",
-    "class": "custom-navigation",
-    "settings": [],
-    "presets": []
-  }
-{% endschema %}
 
-{% assign link_list = section.settings.links %}
-{% assign button_style = section.settings.button_style %}
-{% assign active_style = section.settings.active_style %}
-{% assign hover_style = section.settings.hover_style %}
-{% assign click_style = section.settings.click_style %}
 
 <div class="custom-navigation-container">
   <ul class="custom-navigation-link-list">
-    {% for link in link_list %}
+    {% for link in section.settings.links %}
       <li>
-        <a href="{{ link.url }}" class="custom-navigation-button{% if link.active %} {{ active_style }}{% endif %}" {% if hover_style %}data-hover="{{ hover_style }}"{% endif %} {% if click_style %}data-click="{{ click_style }}"{% endif %}>{{ link.title }}</a>
+        <a href="{{ link.url }}">{{ link.title }}</a>
       </li>
     {% endfor %}
   </ul>
@@ -25,30 +12,32 @@
 
 {% stylesheet %}
 .custom-navigation-container {
-  
+  /* Add styles for the container */
 }
 
 .custom-navigation-link-list {
-
-}
-
-.custom-navigation-button {
-
-}
-
-.custom-navigation-button.active {
- 
-}
-
-.custom-navigation-button:hover {
- 
-}
-
-.custom-navigation-button[data-click="true"] {
- 
+  /* Add styles for the link list */
 }
 {% endstylesheet %}
 
-{% javascript %}
-/* Add any JavaScript code here, if needed */
-{% endjavascript %}
+
+{% schema %}
+  {
+    "name": "Custom Navigation",
+    "class": "custom-navigation",
+    "settings": [
+      {
+        "type": "header",
+        "content": "Custom Navigation Settings"
+      },
+      {
+        "type": "link_list",
+        "id": "links",
+        "label": "Links",
+        "info": "Add up to four links to the custom navigation."
+        
+      }
+    ],
+    "presets": []
+  }
+{% endschema %}
