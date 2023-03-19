@@ -1,32 +1,12 @@
-{% assign pages = section.settings.pages | split: ', ' %}
+{% schema %}
+  {
+    "name": "Section name",
+    "settings": []
+  }
+{% endschema %}
 
-<nav class="page-nav">
-  <ul>
-    {% for page in pages %}
-      {% assign page_handle = page | handleize %}
-      <li><a href="{{ page_handle }}">{{ page }}</a></li>
-    {% endfor %}
-  </ul>
-</nav>
+{% stylesheet %}
+{% endstylesheet %}
 
-
-{
-  "name": "Page Nav",
-  "settings": [
-    {
-      "type": "text",
-      "id": "pages",
-      "label": "Page List",
-      "default": "about-us, contact-us, shop, faqs"
-    }
-  ],
-  "presets": [
-    {
-      "name": "Page Nav",
-      "category": "Navigation",
-      "settings": {
-        "pages": "about-us, contact-us, shop, faqs"
-      }
-    }
-  ]
-}
+{% javascript %}
+{% endjavascript %}
