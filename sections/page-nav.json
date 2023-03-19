@@ -1,9 +1,14 @@
 {
-  "type": "header",
-  "name": "Group name",
+  "name": "Page Nav",
+  "type": "aside",
   "sections": {
+    "main": {
+      "type": "page-nav-main",
+      "settings": {
+      }
+    }
   },
   "order": [
-
+    "main"
   ]
 }
