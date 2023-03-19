@@ -1,4 +1,4 @@
-{% assign pages = 'about-us, contact-us, shop, faqs' | split: ', ' %}
+{% assign pages = section.settings.pages | split: ', ' %}
 
 <nav class="page-nav">
   <ul>
@@ -8,6 +8,7 @@
     {% endfor %}
   </ul>
 </nav>
+
 
 {
   "name": "Page Nav",
