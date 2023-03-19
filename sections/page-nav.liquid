@@ -1,6 +1,17 @@
+{% assign pages = section.settings.pages | split: ', ' %}
+
+<nav class="page-nav">
+  <ul>
+    {% for page in pages %}
+      {% assign page_handle = page | handleize %}
+      <li><a href="{{ page_handle }}">{{ page }}</a></li>
+    {% endfor %}
+  </ul>
+</nav>
+
 {% schema %}
   {
-    "name": "Section name",
+    "name": "Page Nav",
     "settings": []
   }
 {% endschema %}
