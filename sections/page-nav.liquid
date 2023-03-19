@@ -1,12 +1,20 @@
+{% assign pages = 'about-us, contact-us, shop, faqs' | split: ', ' %}
+
+<nav class="page-nav">
+  <ul>
+    {% for page in pages %}
+      {% assign page_handle = page | handleize %}
+      <li><a href="{{ page_handle }}">{{ page }}</a></li>
+    {% endfor %}
+  </ul>
+</nav>
+
 {% schema %}
-  {
-    "name": "Section name",
-    "settings": []
-  }
+{
+  "name": "Page Nav",
+  "class": "page-nav",
+  "settings": [],
+  "presets": [],
+  "blocks": []
+}
 {% endschema %}
-
-{% stylesheet %}
-{% endstylesheet %}
-
-{% javascript %}
-{% endjavascript %}
