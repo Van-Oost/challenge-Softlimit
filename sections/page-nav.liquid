@@ -1,4 +1,4 @@
-{% assign pages = section.settings.pages | split: ', ' %}
+{% assign pages = "about-us, contact-us, shop, faqs" | split: ', ' %}
 
 <nav class="page-nav">
   <ul>
@@ -11,7 +11,7 @@
 
 {% schema %}
   {
-    "name": "Page Nav",
+    "name": "Page nav",
     "settings": []
   }
 {% endschema %}
