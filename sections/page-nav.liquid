@@ -5,7 +5,7 @@
   <ul>
     {% for page in pages %}
       {% assign page_handle = page | handleize %}
-      <li><a href="{{ page_handle }}">{{ page }}</a></li>
+      <li><a href="/pages/{{ page_handle }}">{{ page }}</a></li>
     {% endfor %}
   </ul>
 </nav>
