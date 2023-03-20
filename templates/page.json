@@ -1,5 +1,10 @@
 {
   "sections": {
+    "7cded19b-c82b-4fe0-91e3-e162733aea3c": {
+      "type": "page-nav",
+      "settings": {
+      }
+    },
     "main": {
       "type": "main-page",
       "settings": {
@@ -9,6 +14,7 @@
     }
   },
   "order": [
+    "7cded19b-c82b-4fe0-91e3-e162733aea3c",
     "main"
   ]
 }
