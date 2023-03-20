@@ -73,7 +73,7 @@
     color: white
   }
 
-  a.page-nav-link:active {
+  a.page-nav-link.active {
       color: white;
       background-color: black;
     }
@@ -93,7 +93,7 @@
       width: 100%;
     }
 
-    a.page-nav-link:active {
+    a.page-nav-link.active {
       color: white;
       background-color: black;
     }
@@ -102,3 +102,36 @@
 {% endstyle %}
 
 
+{% javascript %}
+
+document.addEventListener("DOMContentLoaded", function(event) {
+    checkCurrentPage();
+    toggleActive();
+});  
+
+// Add the active class on click  
+function toggleActive() {
+  const links = document.querySelectorAll('.page-nav-link');
+  links.forEach(link => {
+    link.addEventListener('click', () => {
+      link.classList.toggle('active');
+    });
+  });
+}
+
+// check if Url has link 
+function checkCurrentPage() {
+  const links = document.querySelectorAll('.page-nav-link');
+  const currentURL = window.location.href;
+
+  links.forEach(link => {
+    const linkURL = link.href;
+    if (currentURL === linkURL) {
+      link.classList.add('active');
+    } else {
+      link.classList.remove('active');
+    }
+  });
+}
+
+{% endjavascript %}
