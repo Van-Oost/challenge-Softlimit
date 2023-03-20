@@ -97,10 +97,13 @@
 
 
 {% javascript %}
-  document.getElementsByClassName('page-nav-ul').addEventListener('click', e => {
+  document.addEventListener("DOMContentLoaded", function() {
     const tgt = e.target;
-    if (tgt.matches(".page-nav-ul") || tgt.closest("a.page-nav-link")) { // is it the faq-container or one of the descendants
-      tgt.closest("a.page-nav-link").classList.toggle('active')
+    var faqContainers = document.getElementsByClassName('page-nav-ul');
+    for (var i = 0; i < faqContainers.length; i++) { 
+      faqContainers[i].addEventListener('click', function() {
+        tgt.closest("a.page-nav-link").classList.toggle('active')
+      });
     }
   });
 {% endjavascript %}
