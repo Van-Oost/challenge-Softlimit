@@ -35,10 +35,16 @@
         "padding_top": 20,
         "padding_bottom": 20
       }
+    },
+    "368b6968-f623-4595-b707-c7c00d2defaf": {
+      "type": "page-nav",
+      "settings": {
+      }
     }
   },
   "order": [
     "announcement-bar",
-    "header"
+    "header",
+    "368b6968-f623-4595-b707-c7c00d2defaf"
   ]
 }
