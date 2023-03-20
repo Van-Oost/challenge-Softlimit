@@ -97,4 +97,7 @@
 
 
 {% javascript %}
+  $("#nav.page-nav-wrapper > ul > li").on('click','li',function(){
+     $(this).addClass("active");  // adding active class
+});
 {% endjavascript %}
