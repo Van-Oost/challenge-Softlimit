@@ -4,7 +4,7 @@
   <ul>
     {% for page in pages %}
       {% assign page_handle = page | handleize %}
-      <li><a class="page-nav-link "href="/pages/{{ page_handle }}">{{ page }}</a></li>
+      <li class="page-nav-ul"><a class="page-nav-link "href="/pages/{{ page_handle }}">{{ page }}</a></li>
     {% endfor %}
   </ul>
 </nav>
@@ -97,7 +97,7 @@
 
 
 {% javascript %}
-  $("#nav.page-nav-wrapper > ul > li").on('click','li',function(){
+  $(".page-nav-wrapper > ul > li").on('click','li',function(){
      $(this).addClass("active");  // adding active class
 });
 {% endjavascript %}
