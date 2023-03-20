@@ -102,6 +102,13 @@
 
 
 {% javascript %}
+
+document.addEventListener("DOMContentLoaded", function(event) {
+    checkCurrentPage();
+    toggleActive();
+});  
+
+// Add the active class on click  
 function toggleActive() {
   const links = document.querySelectorAll('.page-nav-link');
   links.forEach(link => {
@@ -111,6 +118,7 @@ function toggleActive() {
   });
 }
 
+// check if Url has link 
 function checkCurrentPage() {
   const links = document.querySelectorAll('.page-nav-link');
   const currentURL = window.location.href;
@@ -124,12 +132,5 @@ function checkCurrentPage() {
     }
   });
 }
-
-
-document.addEventListener("DOMContentLoaded", function(event) {
-    checkCurrentPage();
-    toggleActive();
-});
-
 
 {% endjavascript %}
