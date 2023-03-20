@@ -97,5 +97,30 @@
 
 
 {% javascript %}
+function toggleActive() {
+  const links = document.querySelectorAll('.page-nav-link');
+  links.forEach(link => {
+    link.addEventListener('click', () => {
+      link.classList.toggle('active');
+    });
+  });
+}
+
+function checkCurrentPage() {
+  const links = document.querySelectorAll('.page-nav-link');
+  const currentURL = window.location.href;
+
+  links.forEach(link => {
+    const linkURL = link.href;
+    if (currentURL === linkURL) {
+      link.classList.add('active');
+    } else {
+      link.classList.remove('active');
+    }
+  });
+}
+  
+window.addEventListener('load', checkCurrentPage);
+window.addEventListener('load', toggleActive);
 
 {% endjavascript %}
