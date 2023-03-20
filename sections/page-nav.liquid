@@ -124,8 +124,12 @@ function checkCurrentPage() {
     }
   });
 }
-  
-window.addEventListener('load', checkCurrentPage);
-window.addEventListener('load', toggleActive);
+
+
+document.addEventListener("DOMContentLoaded", function(event) {
+    checkCurrentPage();
+    toggleActive();
+});
+
 
 {% endjavascript %}
