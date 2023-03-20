@@ -97,12 +97,6 @@
       color: white;
       background-color: black;
     }
-
-    a.page-nav-link.mobileClick {
-      color: white;
-      background-color: lightgray;
-    }
-    
   }
   
 {% endstyle %}
@@ -120,7 +114,6 @@ function toggleActive() {
   links.forEach(link => {
     link.addEventListener('click', () => {
       link.classList.toggle('active');
-      link.classList.toggle('mobileClick');
     });
   });
 }
