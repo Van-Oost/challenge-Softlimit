@@ -97,7 +97,10 @@
 
 
 {% javascript %}
-  jQ(".page-nav-ul").on('click','li',function(){
-     $(this).addClass("active");  // adding active class
-});
+  document.getElementById('page-nav-ul').addEventListener('click', e => {
+    const tgt = e.target;
+    if (tgt.matches(".page-nav-ul") || tgt.closest("a.page-nav-link")) { // is it the faq-container or one of the descendants
+      tgt.closest("a.page-nav-link").classList.toggle('active')
+    }
+  });
 {% endjavascript %}
